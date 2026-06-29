@@ -39,7 +39,7 @@ export default function Disclaimers() {
           <p>Any figures shown on this site or in materials from our installer partners — including system output, savings, payback periods, incentive amounts, or installation timelines — are projections. Actual results depend on factors outside our control, including your specific installation, equipment performance, electricity rates, weather, and policy changes.</p>
 
           <h2>Incentive figures</h2>
-          <p>We do not publish incentive dollar amounts unless we can point to the authoritative public source (a state energy office, a public utilities commission order, or a published utility tariff). For the current status of any specific incentive, see DSIRE and your utility&apos;s tariff.</p>
+          <p>We do not publish incentive dollar amounts unless we can point to the authoritative public source (a state energy office, a public utilities commission order, or a published utility tariff). For the current status of any specific incentive, check your state&apos;s energy office and your utility&apos;s published tariff.</p>
 
           <h2>Reviews and ratings</h2>
           <p>We do not publish ratings of installers on this site. Any third-party reviews you see are those of the third party. We do not warrant the accuracy of third-party reviews.</p>

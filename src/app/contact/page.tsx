@@ -3,6 +3,7 @@ import { Section } from '@/components/Section';
 import { CtaSection } from '@/components/CtaSection';
 import { JsonLd } from '@/components/JsonLd';
 import { ContactForm } from '@/components/ContactForm';
+import { Picture } from '@/components/Picture';
 import { buildMetadata } from '@/lib/seo';
 import { breadcrumb, contactPage } from '@/lib/schema';
 import { site } from '@/lib/site';
@@ -24,10 +25,24 @@ export default function ContactPage() {
       />
       <Breadcrumbs items={[{ href: '/', label: 'Home' }, { label: 'Contact' }]} />
 
-      <header className="bg-sand-100">
-        <div className="container-content py-12">
-          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">Get your assessment</h1>
-          <p className="mt-4 max-w-3xl text-lg text-slate-700">
+      <header className="relative overflow-hidden bg-slate-950 text-white">
+        <div className="absolute inset-0 -z-10">
+          <Picture
+            baseName="pillar-costs"
+            alt="Home with finished solar installation"
+            sizes="100vw"
+            widths={[640, 1024, 1920]}
+            width={1920}
+            height={1080}
+            className="h-full w-full object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-tr from-slate-950/95 via-slate-900/75 to-slate-900/40" aria-hidden="true" />
+        </div>
+        <div className="container-content flex min-h-[400px] flex-col justify-center py-20">
+          <p className="mb-3 inline-flex w-fit items-center rounded-full border border-solar-500/40 bg-solar-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-solar-500">Free assessment</p>
+          <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl">Get your assessment</h1>
+          <p className="mt-4 max-w-3xl text-lg text-slate-200">
             {site.name} shares your information with installer partners that serve your area. They — and we — cannot guarantee response time, the contents of any quote, or final pricing.
           </p>
         </div>

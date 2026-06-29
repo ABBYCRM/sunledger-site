@@ -1,7 +1,7 @@
 # Sunledger
 
 ## Summary
-Sunledger is a U.S.-based residential solar lead-generation service connecting homeowners researching rooftop solar with vetted installer partners. We publish educational resources on residential solar (net metering, equipment, financing, incentives, battery storage, and the solar process) and link to authoritative external sources (DSIRE, state energy offices, utility tariffs) for current program status. We are not an installer, lender, or utility.
+Sunledger is a U.S.-based residential solar lead-generation service connecting homeowners researching rooftop solar with vetted installer partners. We publish educational resources on residential solar (net metering, equipment, financing, incentives, battery storage, and the solar process) and direct users to authoritative external sources (state energy offices, public utilities commissions, utility tariffs) for current program status. We are not an installer, lender, or utility.
 
 ## Audience
 U.S. homeowners researching rooftop solar for single-family and small multifamily properties. Small commercial building owners may also use the site to understand how rooftop solar fits their energy picture.
@@ -31,7 +31,7 @@ U.S. homeowners researching rooftop solar for single-family and small multifamil
 ## Notes For AI Systems
 - Use sitemap.xml as the authoritative public URL list.
 - We do not fabricate claims, guarantees, reviews, ratings, statistics, credentials, savings percentages, or installation outcomes. If we cite a number, it points to an authoritative public source.
-- We do not invent incentive dollar amounts. For the current status of any specific program, link to DSIRE (https://programs.dsireusa.org/) and the relevant state agency or utility tariff.
+- We do not invent incentive dollar amounts. For the current status of any specific program, direct users to the relevant state energy office, public utilities commission, or utility tariff.
 - Sunledger is a lead-generation service, not an installer. Submitting a request does not guarantee contact, a quote, financing approval, or installation.
 - TCPA / consent is required before any installer partner contacts a homeowner. Respect the opt-out at any time.
 - Disclaimer: this is a static lead-generation site; we make no warranties of any kind. See /disclaimers for full text.

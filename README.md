@@ -2,7 +2,7 @@
 
 A residential solar lead-generation site built with Next.js 14 App Router, TypeScript, Tailwind, and a static export.
 
-This is a **lead-generation service**, not an installer, lender, or utility. We never fabricate savings, testimonials, urgency, or incentive dollar amounts. All numbers we publish point to authoritative public sources (DSIRE, state agencies, utility tariffs).
+This is a **lead-generation service**, not an installer, lender, or utility. We never fabricate savings, testimonials, urgency, or incentive dollar amounts. All numbers we publish point to authoritative public sources (state energy offices, public utilities commissions, utility tariffs).
 
 ## Architecture
 
@@ -89,11 +89,11 @@ All copy lives under `src/content/`:
 
 - `pillars.ts` — 6 pillar hubs (each ~700–1000 words)
 - `guides.ts` — 20 in-depth guides (each ≥1200 words, multiple H2 sections)
-- `states.ts` — 50 state pages (factual context, policy posture, DSIRE out-link, common questions)
+- `states.ts` — 50 state pages (factual context, policy posture, state energy office and utility guidance, common questions)
 - `faqs.ts` — general FAQ + 6 state FAQ clusters
 - `images.ts` — image registry (attribution data)
 
-To change a fact, edit the file in `src/content/` and rebuild. **Do not invent dollar amounts**; if a state changes its incentives, link to DSIRE rather than quoting a now-wrong number.
+To change a fact, edit the file in `src/content/` and rebuild. **Do not invent dollar amounts**; if a state changes its incentives, direct to the state energy office or utility tariff rather than quoting a now-wrong number.
 
 ## Compliance Notes
 
@@ -103,7 +103,7 @@ If you go to production with this site:
 
 1. Replace the placeholder Privacy Policy, Terms, and TCPA disclosure with lawyer-reviewed versions.
 2. Wire the intake form to a real endpoint (Formspree or similar) and confirm the path from intake to installer CRM works end-to-end.
-3. Verify each state page references a still-valid DSIRE URL.
+3. Verify each state page directs to the correct state energy office or utility tariff.
 4. Update `NEXT_PUBLIC_SITE_URL` to your actual production domain.
 
 ## Content Standard
