@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #ffffff;
+    --color-fg: #0F172A;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-inter), system-ui, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-manrope), system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-solar-500 px-6 py-3 text-base font-semibold text-slate-950 shadow-sm transition hover:bg-solar-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-solar-600 disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-900 transition hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900;
+  }
+
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md;
+  }
+
+  .prose-content p {
+    @apply mb-4 leading-relaxed text-slate-700;
+  }
+  .prose-content ul {
+    @apply mb-4 ml-6 list-disc leading-relaxed text-slate-700;
+  }
+  .prose-content ol {
+    @apply mb-4 ml-6 list-decimal leading-relaxed text-slate-700;
+  }
+  .prose-content h2 {
+    @apply mt-12 mb-4 text-2xl font-bold text-slate-900;
+  }
+  .prose-content h3 {
+    @apply mt-8 mb-3 text-xl font-semibold text-slate-900;
+  }
+  .prose-content h4 {
+    @apply mt-6 mb-2 text-lg font-semibold text-slate-900;
+  }
+  .prose-content a {
+    @apply text-solar-600 underline underline-offset-4 hover:text-solar-700;
+  }
+  .prose-content strong {
+    @apply font-semibold text-slate-900;
+  }
+}
