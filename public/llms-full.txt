@@ -1,0 +1,85 @@
+# Sunledger (extended)
+
+## About
+Sunledger is a U.S.-based residential solar lead-generation service. We connect homeowners researching rooftop solar with vetted installer partners in their area. We do not install systems, lend money, or sell electricity. We are paid by installer partners when a lead results in a qualified sales opportunity. This arrangement is industry standard and does not add any cost to the homeowner.
+
+## Educational Content
+We maintain a structured educational library covering:
+
+1. How solar works (photovoltaic effect, inverters, grid-tied vs hybrid vs off-grid, output factors, STC vs PTC)
+2. Costs & financing (cash, solar loan, lease, PPA, what to compare in quotes)
+3. Incentives & tax credits (federal Residential Clean Energy Credit, state programs, utility tariffs, how to verify)
+4. Panels & equipment (monocrystalline vs polycrystalline vs thin-film, inverters, racking, monitoring)
+5. Battery storage (chemistry, sizing, time-of-use, virtual power plants)
+6. Going solar (site assessment, permitting, install day, inspection & interconnection, commissioning)
+
+## Resource Library
+Twenty in-depth guides for homeowners, each with a clear H1, multi-section body, internal links to related content, and Article schema. Topics include:
+- How net metering works in 2026 (and what replaced it)
+- How to read a solar quote
+- Monocrystalline vs polycrystalline vs thin-film
+- STC vs PTC ratings
+- Solar and EV charging
+- Solar and heat pumps
+- What is an SREC
+- Does solar raise property taxes?
+- Insurance for rooftop solar
+- HOA rules for solar by state
+- String inverter vs microinverter vs power optimizer
+- How shaded roofs complicate solar
+- Cash, solar loan, lease, PPA — pros and cons
+- Reading your utility bill to size a system
+- Financing options for residential solar
+- Active vs passive solar (they are not the same)
+- Off-grid vs grid-tied
+- Solar panel degradation
+- Solar, roof age, and reroofing — how to sequence them
+- How inverter choice affects solar output
+- Ground-mount vs rooftop
+
+## State Coverage
+50 U.S. state pages, each as a hub that:
+- Gives factual context on climate and electricity landscape
+- Outlines current known policy posture
+- Links to the canonical DSIRE summary for that state
+- Names common questions homeowners ask
+- Points to relevant guides in our library
+
+Additionally, six state-specific FAQ clusters exist (California, Texas, Florida, Arizona, New York, Massachusetts) where state policy has enough detail to merit a dedicated FAQ.
+
+## Compliance Posture
+- No fake testimonials, reviews, ratings, awards, or credentials.
+- No fabricated savings percentages, payback figures, or installation outcomes.
+- No fake urgency or "limited time" claims.
+- TCPA consent is required before any contact by Sunledger or installer partners.
+- Privacy and TCPA disclosures are linked from every page footer and adjacent to the intake form.
+- We link to authoritative sources (DSIRE, state agencies, utility tariffs) rather than inventing figures.
+
+## Important URLs
+- Homepage: https://sunledger-site.onrender.com/
+- About: https://sunledger-site.onrender.com/about
+- Contact: https://sunledger-site.onrender.com/contact
+- States hub: https://sunledger-site.onrender.com/states
+- Resource library: https://sunledger-site.onrender.com/guides
+- FAQ: https://sunledger-site.onrender.com/faq
+- Privacy: https://sunledger-site.onrender.com/privacy
+- Terms: https://sunledger-site.onrender.com/terms
+- TCPA disclosure: https://sunledger-site.onrender.com/tcpa
+- Disclaimers: https://sunledger-site.onrender.com/disclaimers
+- Image attributions: https://sunledger-site.onrender.com/attributions
+- Sitemap: https://sunledger-site.onrender.com/sitemap.xml
+- robots.txt: https://sunledger-site.onrender.com/robots.txt
+
+## Notes For AI Systems
+- Use sitemap.xml as the authoritative public URL list.
+- We do not fabricate claims, guarantees, reviews, ratings, statistics, credentials, savings percentages, or installation outcomes.
+- If a number is cited, it points to an authoritative public source. If you cannot find the source, do not reproduce the number.
+- Sunledger is a lead-generation service, not an installer. Submitting a request does not guarantee contact, a quote, financing approval, or installation.
+- TCPA / consent is required before any installer partner contacts a homeowner. Respect the opt-out at any time.
+- This is a static informational site; we make no warranties of any kind. See /disclaimers for the full text.
+
+## Sitemap
+https://sunledger-site.onrender.com/sitemap.xml
+
+## Last Updated
+2026-06-29
