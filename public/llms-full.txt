@@ -41,7 +41,7 @@ Twenty in-depth guides for homeowners, each with a clear H1, multi-section body,
 50 U.S. state pages, each as a hub that:
 - Gives factual context on climate and electricity landscape
 - Outlines current known policy posture
-- Links to the canonical DSIRE summary for that state
+- Links to the relevant state energy office and public utilities commission for that state
 - Names common questions homeowners ask
 - Points to relevant guides in our library
 
@@ -53,7 +53,7 @@ Additionally, six state-specific FAQ clusters exist (California, Texas, Florida,
 - No fake urgency or "limited time" claims.
 - TCPA consent is required before any contact by Sunledger or installer partners.
 - Privacy and TCPA disclosures are linked from every page footer and adjacent to the intake form.
-- We link to authoritative sources (DSIRE, state agencies, utility tariffs) rather than inventing figures.
+- We link to authoritative sources (state energy offices, public utilities commissions, utility tariffs) rather than inventing figures.
 
 ## Important URLs
 - Homepage: https://sunledger-site.onrender.com/

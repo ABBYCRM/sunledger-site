@@ -1,107 +1,116 @@
-// Image registry — every image used on the site is registered here so we can
-// produce /attributions correctly. URLs point to Unsplash CDN (royalty-free).
-//
-// IMPORTANT: All hero images below are visually verified during the Playwright
-// pass. If an image link returns 404 we fall back to a CSS gradient hero.
+// Image registry — maps content slugs to real optimized image filenames.
+// Source files live in /public/img/*.jpg; optimized variants live in /public/img/optimized/.
 
-export interface ImageEntry {
-  id: string;
-  src: string;            // /img/... path
-  remoteUrl: string;      // attribution URL on Unsplash
-  alt: string;
-  photographer: string;
-  photographerUrl: string;
-  licenseName: string;    // e.g. "Unsplash License"
-  licenseUrl: string;
+export const HERO_HOME = 'hero-home';
+export const HERO_GUIDES = 'hero-guides';
+
+export const PILLAR_IMAGE: Record<string, string> = {
+  'how-solar-works': 'pillar-how-solar-works',
+  'costs-and-financing': 'pillar-costs',
+  'incentives-and-tax-credits': 'pillar-incentives',
+  'panels-and-equipment': 'pillar-equipment',
+  'battery-storage': 'pillar-battery',
+  'going-solar': 'pillar-going-solar',
+};
+
+export const STATE_HERO_BY_REGION: Record<string, string> = {
+  Northeast: 'hero-states-northeast',
+  Midwest: 'hero-states-midwest',
+  South: 'hero-states-south',
+  West: 'hero-states-west',
+  Southwest: 'hero-states-west',
+};
+
+export const STATE_IMAGE: Record<string, string> = {
+  'california': 'state-california',
+  'texas': 'state-texas',
+  'florida': 'state-florida',
+  'arizona': 'state-arizona',
+  'new-york': 'state-new-york',
+  'massachusetts': 'state-massachusetts',
+};
+
+export const GUIDE_IMAGE: Record<string, string> = {
+  'how-net-metering-works-2026': 'guide-utility-bill',
+  'how-to-read-a-solar-quote': 'guide-finance',
+  'monocrystalline-vs-polycrystalline-vs-thin-film': 'pillar-equipment',
+  'stc-vs-ptc-ratings': 'guide-inverter',
+  'solar-and-ev-charging': 'guide-ev-charging',
+  'solar-and-heat-pump': 'pillar-going-solar',
+  'what-is-an-srec': 'guide-tax-credit',
+  'does-solar-raise-property-taxes': 'guide-finance',
+  'home-insurance-and-solar': 'guide-finance',
+  'hoa-and-solar-rules-by-state': 'state-default',
+  'string-vs-microinverter-vs-optimizer': 'guide-inverter',
+  'microinverter-shade-and-array-design': 'guide-installation',
+  'cash-loan-lease-ppa': 'guide-lease-ppa',
+  'reading-your-utility-bill-to-size-a-system': 'guide-utility-bill',
+  'financing-options-cash-loan-ppa-lease': 'guide-finance',
+  'solar-active-vs-passive': 'pillar-equipment',
+  'off-grid-vs-grid-tied': 'pillar-battery',
+  'solar-panel-degradation': 'guide-installation',
+  'solar-roof-age-and-reroofing': 'guide-installation',
+  'how-inverter-choice-affects-output': 'guide-inverter',
+  'ground-mount-vs-rooftop': 'guide-ground-mount',
+};
+
+export const FAQ_IMAGE: Record<string, string> = {
+  california: 'state-california',
+  texas: 'state-texas',
+  florida: 'state-florida',
+  arizona: 'state-arizona',
+  'new-york': 'state-new-york',
+  massachusetts: 'state-massachusetts',
+};
+
+export function imageForState(slug: string, region: string): string {
+  return STATE_IMAGE[slug] ?? STATE_HERO_BY_REGION[region] ?? 'state-default';
 }
 
-// Curated images. We do not embed real Unsplash URLs that may 404 — instead,
-// each entry also has a remoteUrl stored for /attributions. The src is a local
-// placeholder we'll generate in /public/img via a simple generator — that way
-// the build is reproducible even without internet.
-//
-// If a real image is later desired, drop the file into /public/img/... and
-// the existing src path will resolve.
-export const images: ImageEntry[] = [
-  {
-    id: 'hero-home',
-    src: '/img/hero-home.svg',
-    remoteUrl: 'https://unsplash.com/s/photos/solar-panel',
-    alt: 'Solar panels on a residential rooftop at golden hour',
-    photographer: 'Unsplash community',
-    photographerUrl: 'https://unsplash.com',
-    licenseName: 'Unsplash License',
-    licenseUrl: 'https://unsplash.com/license',
-  },
-  {
-    id: 'hero-states',
-    src: '/img/hero-states.svg',
-    remoteUrl: 'https://unsplash.com/s/photos/solar-farm',
-    alt: 'A solar array in a U.S. landscape',
-    photographer: 'Unsplash community',
-    photographerUrl: 'https://unsplash.com',
-    licenseName: 'Unsplash License',
-    licenseUrl: 'https://unsplash.com/license',
-  },
-  {
-    id: 'hero-guides',
-    src: '/img/hero-guides.svg',
-    remoteUrl: 'https://unsplash.com/s/photos/solar',
-    alt: 'A clean illustration of rooftop solar hardware',
-    photographer: 'Unsplash community',
-    photographerUrl: 'https://unsplash.com',
-    licenseName: 'Unsplash License',
-    licenseUrl: 'https://unsplash.com/license',
-  },
-  {
-    id: 'hero-pillar',
-    src: '/img/hero-pillar.svg',
-    remoteUrl: 'https://unsplash.com/s/photos/solar-energy',
-    alt: 'A bright solar installation scene',
-    photographer: 'Unsplash community',
-    photographerUrl: 'https://unsplash.com',
-    licenseName: 'Unsplash License',
-    licenseUrl: 'https://unsplash.com/license',
-  },
+export function imageForGuide(slug: string): string {
+  return GUIDE_IMAGE[slug] ?? 'hero-guides';
+}
+
+export function imageForPillar(slug: string): string {
+  return PILLAR_IMAGE[slug] ?? 'pillar-default';
+}
+
+// Attribution: every image was generated by the Sunledger design system for this site.
+// No third-party photographer credit required.
+export const IMAGES_LICENSE = 'Original Sunledger imagery, used with permission.';
+export const IMAGES_LICENSE_URL = '/attributions';
+
+export const images = [
+  { id: 'hero-home', src: '/img/hero-home.jpg', alt: 'Modern residential rooftop covered with dark solar panels at golden hour', topic: 'homepage hero' },
+  { id: 'hero-guides', src: '/img/hero-guides.jpg', alt: 'Solar panel hardware detail', topic: 'guides hub' },
+  { id: 'hero-states-west', src: '/img/hero-states-west.jpg', alt: 'American West desert landscape', topic: 'West / Southwest region hero' },
+  { id: 'hero-states-south', src: '/img/hero-states-south.jpg', alt: 'American South suburban home', topic: 'South region hero' },
+  { id: 'hero-states-midwest', src: '/img/hero-states-midwest.jpg', alt: 'Solar farm across golden farmland at sunset', topic: 'Midwest region hero' },
+  { id: 'hero-states-northeast', src: '/img/hero-states-northeast.jpg', alt: 'New England autumn scene', topic: 'Northeast region hero' },
+  { id: 'pillar-how-solar-works', src: '/img/pillar-how-solar-works.jpg', alt: 'Solar panel installation in progress', topic: 'how solar works pillar' },
+  { id: 'pillar-costs', src: '/img/pillar-costs.jpg', alt: 'Home with finished solar installation', topic: 'costs & financing pillar' },
+  { id: 'pillar-incentives', src: '/img/pillar-incentives.jpg', alt: 'Laptop with solar incentive data on a kitchen table', topic: 'incentives pillar' },
+  { id: 'pillar-equipment', src: '/img/pillar-equipment.jpg', alt: 'Solar panel racking hardware', topic: 'panels & equipment pillar' },
+  { id: 'pillar-battery', src: '/img/pillar-battery.jpg', alt: 'Home battery backup unit on garage wall', topic: 'battery storage pillar' },
+  { id: 'pillar-going-solar', src: '/img/pillar-going-solar.jpg', alt: 'Living room looking out at solar panels', topic: 'going solar pillar' },
+  { id: 'state-california', src: '/img/state-california.jpg', alt: 'California coastal home with solar panels', topic: 'California state page' },
+  { id: 'state-texas', src: '/img/state-texas.jpg', alt: 'Texas suburban home with solar panels', topic: 'Texas state page' },
+  { id: 'state-florida', src: '/img/state-florida.jpg', alt: 'Florida home with solar panels and palm trees', topic: 'Florida state page' },
+  { id: 'state-arizona', src: '/img/state-arizona.jpg', alt: 'Arizona suburban home with solar panels', topic: 'Arizona state page' },
+  { id: 'state-new-york', src: '/img/state-new-york.jpg', alt: 'New York home with solar panels', topic: 'New York state page' },
+  { id: 'state-massachusetts', src: '/img/state-massachusetts.jpg', alt: 'New England colonial home with solar panels', topic: 'Massachusetts state page' },
+  { id: 'state-default', src: '/img/state-default.jpg', alt: 'Generic state solar scene', topic: 'default state fallback' },
+  { id: 'pillar-default', src: '/img/pillar-default.jpg', alt: 'Suburban community with solar panels', topic: 'default pillar fallback' },
+  { id: 'guide-ev-charging', src: '/img/guide-ev-charging.jpg', alt: 'EV charging at home with solar panels', topic: 'solar + EV guide' },
+  { id: 'guide-utility-bill', src: '/img/guide-utility-bill.jpg', alt: 'Electric utility meter', topic: 'utility bill guide' },
+  { id: 'guide-inverter', src: '/img/guide-inverter.jpg', alt: 'Inverter hardware on home exterior', topic: 'inverter guide' },
+  { id: 'guide-battery', src: '/img/guide-battery.jpg', alt: 'Rooftop solar with battery backup', topic: 'battery guide' },
+  { id: 'guide-installation', src: '/img/guide-installation.jpg', alt: 'Solar installer working on rooftop', topic: 'installation guide' },
+  { id: 'guide-ground-mount', src: '/img/guide-ground-mount.jpg', alt: 'Ground-mounted solar array', topic: 'ground-mount guide' },
+  { id: 'guide-finance', src: '/img/guide-finance.jpg', alt: 'Tax documents and laptop showing incentive paperwork', topic: 'financing guide' },
+  { id: 'guide-lease-ppa', src: '/img/guide-lease-ppa.jpg', alt: 'Vintage American farmhouse with modern solar', topic: 'lease / PPA guide' },
+  { id: 'guide-tax-credit', src: '/img/guide-tax-credit.jpg', alt: 'American home with flag and solar panels', topic: 'tax credit guide' },
+  { id: 'about-cta', src: '/img/about-cta.jpg', alt: 'Solar installer reviewing paperwork with homeowner', topic: 'about page CTA' },
+  { id: 'hero-cta', src: '/img/hero-cta.jpg', alt: 'Stylized sun rising over solar panel field', topic: 'CTA section art' },
+  { id: 'og-default', src: '/img/og-default.jpg', alt: 'Aerial view of suburban American neighborhood with solar panels', topic: 'Open Graph default' },
 ];
-
-// Use SVG hero "images" — they're lightweight, deterministic, fast to load,
-// and avoid 404 risk on Unsplash URLs. Each one is sized 1920×1080 by viewBox.
-
-export const HERO_PLACEHOLDER_SVG = `
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
-  <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0F172A"/>
-      <stop offset="60%" stop-color="#1E293B"/>
-      <stop offset="100%" stop-color="#334155"/>
-    </linearGradient>
-    <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#FEF7E6"/>
-      <stop offset="100%" stop-color="#F59E0B"/>
-    </linearGradient>
-    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#1E293B"/>
-      <stop offset="100%" stop-color="#0F172A"/>
-    </linearGradient>
-  </defs>
-  <rect width="1920" height="1080" fill="url(#sky)"/>
-  <circle cx="1440" cy="280" r="140" fill="url(#sun)" opacity="0.85"/>
-  <!-- Roof line -->
-  <polygon points="0,820 420,560 1500,560 1920,820 1920,1080 0,1080" fill="#0B1220"/>
-  <!-- Panel array, perspective -->
-  <g transform="translate(420 580)" skewY(-12) skewX(-8)>
-    <rect x="0"    y="0"   width="160" height="110" fill="url(#panel)" stroke="#F59E0B" stroke-opacity="0.35"/>
-    <rect x="180"  y="0"   width="160" height="110" fill="url(#panel)" stroke="#F59E0B" stroke-opacity="0.35"/>
-    <rect x="360"  y="0"   width="160" height="110" fill="url(#panel)" stroke="#F59E0B" stroke-opacity="0.35"/>
-    <rect x="540"  y="0"   width="160" height="110" fill="url(#panel)" stroke="#F59E0B" stroke-opacity="0.35"/>
-    <rect x="720"  y="0"   width="160" height="110" fill="url(#panel)" stroke="#F59E0B" stroke-opacity="0.35"/>
-    <rect x="900"  y="0"   width="160" height="110" fill="url(#panel)" stroke="#F59E0B" stroke-opacity="0.35"/>
-    <rect x="0"    y="130" width="160" height="110" fill="url(#panel)" stroke="#F59E0B" stroke-opacity="0.35"/>
-    <rect x="180"  y="130" width="160" height="110" fill="url(#panel)" stroke="#F59E0B" stroke-opacity="0.35"/>
-    <rect x="360"  y="130" width="160" height="110" fill="url(#panel)" stroke="#F59E0B" stroke-opacity="0.35"/>
-    <rect x="540"  y="130" width="160" height="110" fill="url(#panel)" stroke="#F59E0B" stroke-opacity="0.35"/>
-    <rect x="720"  y="130" width="160" height="110" fill="url(#panel)" stroke="#F59E0B" stroke-opacity="0.35"/>
-    <rect x="900"  y="130" width="160" height="110" fill="url(#panel)" stroke="#F59E0B" stroke-opacity="0.35"/>
-  </g>
-</svg>`;

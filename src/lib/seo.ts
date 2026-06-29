@@ -14,7 +14,7 @@ interface MetaInput {
 export function buildMetadata(input: MetaInput): Metadata {
   const fullTitle = `${input.title} | ${site.name}`;
   const url = `${site.domain}${input.path.startsWith('/') ? input.path : `/${input.path}`}`;
-  const image = input.image || `${site.domain}/og-default.jpg`;
+  const image = input.image || `${site.domain}/img/og-default.jpg`;
 
   return {
     title: fullTitle,

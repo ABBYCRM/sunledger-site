@@ -96,9 +96,9 @@ export const pillars: Pillar[] = [
     name: 'Incentives & tax credits',
     h1: 'Solar incentives and tax credits explained',
     description: 'Federal, state, and utility solar incentives for U.S. homeowners — what they are, who administers them, and how to verify the current status of any specific program.',
-    metaDescription: 'Federal solar tax credit (ITC/IRA), state rebates, utility tariffs, and SRECs explained — with a pointer to DSIRE for current program status.',
+    metaDescription: 'Federal solar tax credit (ITC/IRA), state rebates, utility tariffs, and SRECs explained — with pointers to your state energy office and utility tariff for current program status.',
     intro:
-      'Most U.S. residential solar incentives fall into three buckets: federal tax credits, state-administered programs (rebates, SRECs, production incentives), and utility-administered programs (tariffs, time-of-use rates, demand response credits). Each program has its own eligibility, paperwork, and timeline. This page explains the structure. For the current status of any specific program, link out to DSIRE and your utility\'s tariffs — those are the canonical sources.',
+      'Most U.S. residential solar incentives fall into three buckets: federal tax credits, state-administered programs (rebates, SRECs, production incentives), and utility-administered programs (tariffs, time-of-use rates, demand response credits). Each program has its own eligibility, paperwork, and timeline. This page explains the structure. For the current status of any specific program, check your state energy office website and your utility\'s filed tariff — those are the canonical sources.',
     sections: [
       {
         id: 'federal-itc',
@@ -110,7 +110,7 @@ export const pillars: Pillar[] = [
         id: 'state-incentives',
         heading: 'State-administered incentives',
         body:
-          'State incentives include upfront rebates (paid at install), performance-based incentives (paid per kWh produced), SRECs (Solar Renewable Energy Credits, a tradable certificate representing the environmental attributes of solar generation), and property tax exemptions that prevent solar from raising your assessed value. Each is administered by a different state agency — sometimes the energy office, sometimes the public utilities commission. Eligibility, funding availability, and application timing all change frequently. DSIRE is the most reliable independent source for tracking state-level programs.',
+          'State incentives include upfront rebates (paid at install), performance-based incentives (paid per kWh produced), SRECs (Solar Renewable Energy Credits, a tradable certificate representing the environmental attributes of solar generation), and property tax exemptions that prevent solar from raising your assessed value. Each is administered by a different state agency — sometimes the energy office, sometimes the public utilities commission. Eligibility, funding availability, and application timing all change frequently. Your state energy office and public utilities commission are the most reliable sources for current program details.',
       },
       {
         id: 'utility-programs',
@@ -122,7 +122,7 @@ export const pillars: Pillar[] = [
         id: 'how-to-verify',
         heading: 'How to verify any incentive claim',
         body:
-          'A reliable workflow: (1) find the program on DSIRE; (2) confirm with the administering agency\'s own website; (3) ask the installer for the program\'s published terms and documentation; (4) confirm with a tax professional on federal credits. Be skeptical of any quote that lists dollar values for incentives without a citation, or that includes programs you cannot find on a state website. Legitimate programs are publicly documented; illegitimate ones are not.',
+          'A reliable workflow: (1) look up the program on your state energy office website or public utilities commission; (2) confirm with the administering agency\'s own website; (3) ask the installer for the program\'s published terms and documentation; (4) confirm with a tax professional on federal credits. Be skeptical of any quote that lists dollar values for incentives without a citation, or that includes programs you cannot find on a state website. Legitimate programs are publicly documented; illegitimate ones are not.'
       },
     ],
   },

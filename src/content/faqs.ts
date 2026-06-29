@@ -182,7 +182,7 @@ export const faqClusters: Record<string, FaqCluster> = {
       {
         question: 'Are Arizona solar incentives still funded?',
         answer:
-          'Arizona state-level solar incentives have changed frequently. Verify current status with DSIRE and the Arizona Corporation Commission (the state\'s public utilities regulator). Most Arizona homeowners today are choosing solar on the strength of the utility economics, not state incentives.',
+          'Arizona state-level solar incentives have changed frequently. Verify current status with the Arizona Corporation Commission and your utility\'s filed tariff. Most Arizona homeowners today are choosing solar on the strength of the utility economics, not state incentives.'
       },
     ],
   },

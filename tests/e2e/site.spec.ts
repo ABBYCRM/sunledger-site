@@ -195,16 +195,18 @@ test.describe('Per-page SEO + content validation', () => {
   }
 
   for (const s of states) {
-    test(`state ${s.slug} — body contains state name and DSIRE out-link`, async ({ page }) => {
+    test(`state ${s.slug} — body contains state name and state guidance`, async ({ page }) => {
       await page.goto(`/states/${s.slug}/`);
       const body = await page.textContent('body');
       expect(body).toContain(s.name);
-      // DSIRE out-link: use a substring match to be resilient.
+      // Verify state energy office / utility guidance is present in the page.
       const hrefs = await page.$$eval('a[href]', (els) =>
         (els as HTMLAnchorElement[]).map((a) => a.getAttribute('href') || '')
       );
-      const hasDsire = hrefs.some((h) => h.includes('programs.dsireusa.org'));
-      expect(hasDsire).toBe(true);
+      const hasGuidance = hrefs.some((h) =>
+        h.includes('puc.') || h.includes('energy.') || h.includes('gov/') || h.includes('tariff') || h.includes('utility'),
+      );
+      expect(hasGuidance).toBe(true);
     });
   }
 });
